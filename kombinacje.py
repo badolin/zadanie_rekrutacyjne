@@ -1,8 +1,8 @@
 import itertools
 
 def kombinacje(cechy):
-    keys, values = zip(*cechy.items())
-    kombinacje = [dict(zip(keys, v)) for v in itertools.product(*values)]
+    klucze, wartosci = zip(*cechy.items())
+    kombinacje = [dict(zip(klucze, v)) for v in itertools.product(*wartosci)]
     return kombinacje
 
 
@@ -12,8 +12,8 @@ def main():
         "wysokość": {"30cm", "40cm"},
         "kolor": {"czarny", "biały", "zielony"},
     }
-    result = kombinacje(input)
-    for x in result:
+    wynik = kombinacje(input)
+    for x in wynik:
         print(x)
 if __name__ == '__main__':
     main()
