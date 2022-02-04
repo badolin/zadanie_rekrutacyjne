@@ -1,11 +1,11 @@
 def kombinacje(cechy):
-    keys, values = zip(*cechy.items())
+    klucze, wartosci = zip(*cechy.items())
 
-    result = [[]]
-    for value in values:
-        result = [x+[y] for x in result for y in value]
+    wynik = [[]]
+    for wartosc in wartosci:
+        wynik = [x+[y] for x in wynik for y in wartosc]
 
-    kombinacje = [dict(zip(keys, v)) for v in result]
+    kombinacje = [dict(zip(klucze, v)) for v in wynik]
     return kombinacje
 
 def main():
@@ -15,8 +15,8 @@ def main():
         "kolor": {"czarny", "biały", "zielony"},
         "długośc": {"100cm", "200cm", "400cm", "500cm"}
     }
-    result = kombinacje(input)
-    for x in result:
+    wynik = kombinacje(input)
+    for x in wynik:
         print(x)
 
 if __name__ == '__main__':
